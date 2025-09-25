@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+ورود به سایت
+{% endblock title %}
+
+{% block content %} 
+<div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="breadcrumb-wrap p-3 bg-white my-4 rounded">
+                  <nav>
+                     <ol class="d-flex">
+                        <li><a href="#">خانه</a></li>
+                        <li>برگه خالی</li>
+                     </ol>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+      <section class="mb-5">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="page-body bg-white rounded p-3">
+                    <h2 class="mb-4">ثبت نام در  سایت</h2>
+                    <form method="post" action="{% url 'accounts:signup' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                    </br>
+                        <button type="submit" class="btn btn-primary">ثبت نام</button>
+                    </form>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+{% endblock content%}

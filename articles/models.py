@@ -14,3 +14,5 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
+    def small_description(self):
+        return self.body[:150] + '...'

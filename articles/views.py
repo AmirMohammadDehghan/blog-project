@@ -13,7 +13,14 @@ def article_list(request):
   return render(request, 'articles/article_list.html', context)
 
 def article_detail(request, slug):
-  pass
+  
+  article = Article.objects.get(slug=slug)
+
+  context = {
+    'article': article
+  }
+  
+  return render(request, 'articles/article_detail.html', context)
 
 def article_create(request):
   pass

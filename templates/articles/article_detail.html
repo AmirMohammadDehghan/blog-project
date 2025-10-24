@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}
+{{ article.title }}
+{% endblock title %}
+
+{% block content %}
+<section class="mb-5">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <article>
+                     <div class="section-top-single bg-white rounded p-3">
+                        <div class="row">
+                           <div class="col-md-7">
+                              <figure>
+                                 <img src="{{article.image.url}}" alt="" class="img-thumbnail d-table mx-auto">
+                              </figure>
+                           </div>
+                           <div class="col-md-5">
+                              <div class="border rounded p-3 mb-3">
+                                 <h1 class="border-bottom"> {{article.title}} </h1>
+                                 <ul class="detail-single d-flex">
+                                    <li><i class="bi bi-instagram p-1"></i></li>
+                                    <li><i class="bi bi-clock p-1"></i>&nbsp; {{ article.updated_at }} </li>
+                                 </ul>
+                                 <div class="text-start">
+                                    
+                                 </div>
+                              </div>
+                              <div class="border rounded p-3 single-excerpt-box">
+                                 <span class="d-block py-2 text-info">خلاصه مطلب</span>
+                                 <p class="m-0"> {{article.small_description}} </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="content-single rounded bg-white p-3 mt-3">
+                        <p> {{ article.body }} </p>
+                        
+                        
+                        
+                     </div>
+                     
+                  </article>
+               </div>
+               
+            </div>
+         </div>
+      </section>
+
+      {% endblock content %}
